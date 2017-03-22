@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Title: services
+Target-Compatibility: 1.6
+Implementation-Version: 1.3.0-SNAPSHOT
+Built-By: ericgribkoff
+Source-Compatibility: 1.6
+Built-JDK: 1.8.0_101
+
