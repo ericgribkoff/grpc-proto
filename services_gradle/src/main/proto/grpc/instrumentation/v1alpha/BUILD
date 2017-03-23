@@ -29,13 +29,58 @@
 
 package(default_visibility = ["//visibility:public"])
 
+#load("@grpc_repo//:bazel/cc_grpc_library.bzl", "cc_grpc_library")
 load("@grpc_repo//:bazel/grpc_build_system.bzl", "grpc_proto_library")
 
+#grpc_proto_library(
+#    name = "monitoring",
+#    srcs = [
+#        "monitoring.proto",
+#    ],
+#    use_external = False,
+#    well_known_protos = "@com_google_protobuf//:well_known_protos",
+#    deps = [],
+#)
+
 grpc_proto_library(
-    name = "census",
+    name = "monitoring",
+    srcs = [
+        "monitoring.proto",
+    ],
+    use_external = True,
+    well_known_protos = "@com_google_protobuf//:well_known_protos",
+    deps = [
+        "//services/src/main/proto/google/instrumentation:census_proto",
+    ],
+)
+
+grpc_proto_library(
+    name = "census_proto",
     srcs = [
         "census.proto",
     ],
-    use_external = False,
+    use_external = True,
     well_known_protos = "@com_google_protobuf//:well_known_protos",
 )
+#proto_library(
+#    name = "census_proto",
+#    srcs = ["census.proto"],
+#)
+#
+#proto_library(
+#    name = "monitoring_proto",
+#    srcs = ["monitoring.proto"],
+#    deps = [":census_proto"],
+#)
+#
+#cc_grpc_library(
+#    name = "monitoring",
+#    srcs = "monitoring_proto"],
+#    proto_only = True,
+#    use_external = True,
+#    well_known_protos = "@com_google_protobuf//:well_known_protos",
+#    deps = [":census_proto"],
+#    #    deps = [
+#    #        "//services/src/main/proto/google/instrumentation:census",
+#    #    ],
+#)

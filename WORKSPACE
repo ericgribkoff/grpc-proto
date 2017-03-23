@@ -84,11 +84,11 @@ bind(
     actual = "@submodule_boringssl//:ssl",
 )
 
-#new_local_repository(
-#    name = "submodule_boringssl",
-#    build_file = "third_party/boringssl-with-bazel/BUILD",
-#    path = "third_party/boringssl-with-bazel",
-#)
+new_local_repository(
+    name = "submodule_boringssl",
+    build_file = "third_party/boringssl-with-bazel/BUILD",
+    path = "third_party/boringssl-with-bazel",
+)
 
 # Zlib
 bind(

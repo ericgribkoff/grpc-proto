@@ -49,11 +49,19 @@ grpc_proto_library(
     ],
     use_external = True,
     well_known_protos = "@com_google_protobuf//:well_known_protos",
-    #deps = [
-    #    ":census",
-    #],
+    deps = [
+        "//google/instrumentation:census_proto",
+    ],
 )
 
+grpc_proto_library(
+    name = "census_proto",
+    srcs = [
+        "census.proto",
+    ],
+    use_external = True,
+    well_known_protos = "@com_google_protobuf//:well_known_protos",
+)
 #proto_library(
 #    name = "census_proto",
 #    srcs = ["census.proto"],
