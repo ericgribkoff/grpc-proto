@@ -30,7 +30,7 @@
 package(default_visibility = ["//visibility:public"])
 
 #load("@grpc_repo//:bazel/cc_grpc_library.bzl", "cc_grpc_library")
-load("@grpc_repo//:bazel/grpc_build_system.bzl", "grpc_proto_library")
+load("@grpc_main_repo//:bazel/grpc_build_system.bzl", "grpc_proto_library")
 
 #grpc_proto_library(
 #    name = "monitoring",

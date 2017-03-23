@@ -51,7 +51,7 @@ http_archive(
 )
 
 git_repository(
-    name = "grpc_repo",
+    name = "grpc_main_repo",
     commit = "84b0e1b84e9421fccc7e71305beee874b0d6eec9",
     #init_submodules = 1,
     remote = "https://github.com/ericgribkoff/grpc.git",
@@ -59,17 +59,17 @@ git_repository(
 
 bind(
     name = "grpc_cpp_plugin",
-    actual = "@grpc_repo//:grpc_cpp_plugin",
+    actual = "@grpc_main_repo//:grpc_cpp_plugin",
 )
 
 bind(
     name = "grpc++",
-    actual = "@grpc_repo//:grpc++",
+    actual = "@grpc_main_repo//:grpc++",
 )
 
 bind(
     name = "grpc++_codegen_proto",
-    actual = "@grpc_repo//:grpc++_codegen_proto",
+    actual = "@grpc_main_repo//:grpc++_codegen_proto",
 )
 
 # nanopb
